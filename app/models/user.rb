@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
 	before_validation :prep_email
 	before_save :create_avatar_url
 
+	has_many :rabbits
+
 	private
 
 	def create_avatar_url

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @rabbit.content %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @rabbit.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_rabbit_path(@rabbit) %> |
+<%= link_to 'Back', rabbits_path %>

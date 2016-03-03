@@ -1,0 +1,23 @@
+<% if current_user %>
+<p id="notice"><%= notice %></p>
+<div id='create_rabbit'>
+  <h5>Create Rabbit</h5>
+  <%= form_for @rabbit do |f| %>
+  <%= f.text_area :content %>
+  <%= f.submit 'Rabbit' %>
+  <% end %>
+</div>
+
+<div id='public_rabbits'></div>
+<h5>Public Rabbits</h5>
+<% @rabbits.each do |rabbit| %>
+  <%= link_to 'user',  user_path(rabbit.user) %>
+  <img src="<%= rabbit.user.avatar_url %>"/>
+  <span><%= rabbit.user.name %></span>
+  <span><%= rabbit.user.username %></span>
+  <span><%= rabbit.content %></span>
+  <span><%= rabbit.created_at %></span>
+<% end %>
+<br>
+
+<% end %>

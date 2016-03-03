@@ -1,14 +1,26 @@
+<% if current_user %>
 <div id='rabbit_profile'>
 	<h2>Your Rabbit Profile is here</h2>
 	<%= @user.name %>
 	<%= @user.username %>
 	<img src="<%= @user.avatar_url %>"/>
+	<%= @user.rabbits.size  %> Rabbits
+	<span>Followers</span>
+ 	<span>Following</span>
 </div>
-<div id='rabbits'>
- <span>Followers</span>
- <span>Following</span>
+
+<div id='create_rabbit'>
+	<h2>Create Rabbit</h2>
+	<%= form_for @rabbit do |f| %>
+		<%= f.text_area :content %>
+		<%= f.submit 'Rabbit' %>
+	<% end %>
 </div>
+
 <div id='your_rabbits'>
 	<h2>Your Rabbits</h2>
-	Coming...
+	<%= @user.rabbits.each do |r| %>
+	  <%= r.content %>	
+	<% end %>
 </div>
+<% end %>

@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  resources :rabbits
   get 'sessions/new'
 
-  get 'sessions/create'
+  post 'sessions/create'
 
   get 'sessions/destroy'
 
