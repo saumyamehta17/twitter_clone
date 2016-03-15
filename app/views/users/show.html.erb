@@ -23,4 +23,8 @@
 	  <%= r.content %>	
 	<% end %>
 </div>
+<div>
+	<span class="spacing"><%= current_user.followers.count %> Followers</span>
+	<span class="spacing"><%= current_user.followeds.count %> Following</span>
+</div>
 <% end %>

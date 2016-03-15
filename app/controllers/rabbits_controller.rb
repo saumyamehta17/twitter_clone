@@ -1,5 +1,8 @@
 class RabbitsController < ApplicationController
+
   before_action :set_rabbit, only: [:show, :edit, :update, :destroy]
+
+  # cache_sweeper :rabbit_sweeper, only: :index
 
   # GET /rabbits
   # GET /rabbits.json
